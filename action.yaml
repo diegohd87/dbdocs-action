@@ -1,0 +1,20 @@
+
+name: 'DBdocs'
+author: 'Diego-Dias'
+description: 'This Github Action is used for the dynamic creation of an Entity Relationship Diagram.'
+inputs:
+  token:
+    description: 'DBdocs token.'
+    required: true
+  filename: 
+    description: 'DBdocs dbml filename'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - id: job
+      shell: bash
+      run: ${{ github.action_path }}/dbdocs.sh
+      env: 
+        DBDOCS_TOKEN: ${{ inputs.token }} # required
+        DBDOCS_FILENAME: ${{ inputs.filename }} #required
