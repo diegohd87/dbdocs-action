@@ -8,7 +8,7 @@ You can generate this token and use it on github secrets or the another way that
 After the token generation you need just include the Action called in the workflow file (.github/workflows) as shown in the example below:
 
 ```yaml
-- name: Trybe DBdocs
+- name: DBdocs
   if: github.event_name == 'pull_request'
   uses: dbdocs-action@main
   with:
